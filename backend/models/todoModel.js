@@ -15,13 +15,14 @@ const todoSchema = new mongoose.Schema({
     type: Number, 
     required: false
   },
-  completed: Boolean 
+  completed: String, 
 }, {timestamps: true})
 
 
 // based on fruit app to see if works in postman
-const Todo = mongoose.model('Todo', todoSchema);
-module.exports= Todo;
+// const Todo = mongoose.model('Todo', todoSchema);
+// module.exports= Todo;
 
-//original way module.exports = mongoose.model('ToDo', todoSchema)
+//original way
+module.exports = mongoose.model('ToDo', todoSchema)
 

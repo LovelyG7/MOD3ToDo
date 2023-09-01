@@ -1,5 +1,4 @@
 const Todo = require("../models/todoModel");
-
 const mongoose = require('mongoose');
 
 // get all todos
@@ -26,11 +25,11 @@ const getTodo = async (req,res) => {
 }
 
 //create new todo
-const createTodo = async (req, res) => { const {task, deadline, priority} = req.body
+const createTodo = async (req, res) => { const {task, priority, timeCommitment, completed} = req.body
 
 //add doc to db
 try {
-    const todo = await Todo.create({task, deadline, priority})
+    const todo = await Todo.create({task, priority, timeCommitment, completed})
     res.status(200).json(todo)
   } catch (error) {
     res.status(400).json({error:error.message})
