@@ -1,9 +1,12 @@
 
 import { useState } from "react";
 import DropdownList from "react-widgets/DropdownList";
+import { useTodosContext } from "../hooks/useTodosContext"
 
 
 const TodoForm = () => {
+  const { dispatch }  = useTodosContext()
+
   const [task, setTask] = useState('')
   const [priority, setPriority] = useState('High')
   const [timeCommitment, setTimeCommitment] = useState('')
@@ -34,6 +37,7 @@ const TodoForm = () => {
       setTimeCommitment('')
       setCompleted('no')
       console.log('new todo item added', json);
+      dispatch({type: 'CREATE_TODO', payload: json})
     }
 
   }  
