@@ -12,6 +12,10 @@ export const todosReducer = (state, action) => {
       return {
         todos: [action.payload, ...state.todos]
       }
+      case 'DELETE_TODO':
+      return {
+        todos: state.todos.filter(t => t._id !== action.payload._id)
+      }   
     default:
       return state
   }

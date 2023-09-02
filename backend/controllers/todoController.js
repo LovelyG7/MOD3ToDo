@@ -27,6 +27,15 @@ const getTodo = async (req,res) => {
 //create new todo
 const createTodo = async (req, res) => { const {task, priority, timeCommitment, completed} = req.body
 
+let emptyFields = []
+
+if(!task) {
+  emptyFields.push('task')
+}
+if(emptyFields.length > 0) {
+  return  res.status(400).json({ error:'Please fill in a task todo',emptyFields})
+}
+
 //add doc to db
 try {
     const todo = await Todo.create({task, priority, timeCommitment, completed})

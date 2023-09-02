@@ -12,7 +12,7 @@ const TodoForm = () => {
   const [timeCommitment, setTimeCommitment] = useState('')
   const [completed, setCompleted] = useState('no')
   const [error, setError] = useState(null)
-
+  const [emptyFields, setEmptyFields] = useState([])
   const handleSubmit = async (e) => {
     e.preventDefault()
 
@@ -29,6 +29,7 @@ const TodoForm = () => {
 
     if(!response.ok) {
       setError(json.error)
+      setEmptyFields(json.emptyFields)
     }
     if(response.ok) {
       setError(null)
@@ -36,6 +37,7 @@ const TodoForm = () => {
       setPriority('')
       setTimeCommitment('')
       setCompleted('no')
+      setEmptyFields([])
       console.log('new todo item added', json);
       dispatch({type: 'CREATE_TODO', payload: json})
     }
@@ -51,6 +53,7 @@ const TodoForm = () => {
         type="text"
         onChange={(e) => setTask(e.target.value)}
         value={task}
+        className={emptyFields.includes('task') ? 'error' : ''}
       />
 
       <label>Time Commitment (min): </label>
