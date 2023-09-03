@@ -1,27 +1,47 @@
 /* google font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
 
+@import url("https://fonts.googleapis.com/css?family=Galada:400");
+
+@import url("https://fonts.googleapis.com/css2?family=Style+Script&display=swap");
+
+@font-face {
+  font-family: 'RetroSignature';
+  src: url('assets/retro_signature/RetroSignature.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* layout */
 :root {
-  --primary: #1aac83;
+  --primary: #2f0707;
   --error: #e7195a;
 }
 body {
     background-image: url('C:/Users/NG/Downloads/—Pngtree—beautiful frame background with floral_5205727.png');
     background-repeat: no-repeat;
-    background-size: 1700px;
+    background-size: 1500px;
     background-position:top;
-    background-position-y: 14%;
+    background-position-y: 0%;
     padding-top: 0px;
     margin: 0;
     font-family: "Poppins";
+    
 }
+
+/* figure out cursor */
+*{
+  cursor: url('./assets/lifestyle-magnolia-pack.png'), auto;
+}
+
 header {
-  background: #ffffff82;
-  height: 50px;
-  display: flex;
-  
+  /* background-image: url(./assets/abstract-marble-pink-white-gold-background-wedding-invitation-backdrop_779330-1200.avif); */
+  /* background: #ffffff82; */
+  height: 100px;
+  display: flex; 
 }
+
+
 header .container {
   max-width: 1400px;
   margin: 0 auto;
@@ -29,10 +49,14 @@ header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+ 
 }
 header a {
-  color: #333;
+  color: #660b0b;
   text-decoration: none;
+  font-family: Galada;
+  font-size: xx-large;
+  padding-top: 34px;
 }
 .pages{
   max-width: 1400px;
@@ -46,35 +70,56 @@ header a {
   grid-template-columns: 3fr 1fr;
   gap: 100px;
 }
-
+/* todos */
+.todos{
+  height: 23%; 
+  overflow-y: scroll;
+  margin-top: 14%;
+  display: flexbox
+}
 /* consider doing neon sign effect shading  */
 .todo-details {
-  background: #ffffff54;
+  
   border-radius: 4px;
   margin: 20px auto;
   padding: 20px;
   position: relative;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.todo-details::before {
+  content:"";
+  background-image: url('./assets/abstract-marble-pink-white-gold-background-wedding-invitation-backdrop_779330-1200.avif');
+  background-size: cover;
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.14;
 }
 .todo-details h4 {
   margin: 0 0 10px 0;
-  font-size: 1.2em;
+  font-size: 5.0em;
+  font-weight: 500;
   color: var(--primary);
+  font-family: 'RetroSignature'
 }
 .todo-details p {
   margin: 0;
-  font-size: 0.9em;
-  color: #555;
+  font-size: 1.0em;
+  color: #2d0909;
 }
 .todo-details span {
   position: absolute;
   top: 20px;
   right: 20px;
-  cursor: pointer;
-  background: #f1f1f1;
+  background: #f1f1f149;
   padding: 6px;
   border-radius: 50%;
   color: #333;
+  
 }
 
 /* new workout form */
@@ -113,5 +158,9 @@ input.error {
 }
 
 .create { 
-  background:#e1fee49c ;
+  background:#fbfdfc9c ;
+  height: 23%;
+  margin-top: 150px;
+  color: var(--primary);
+  
 }

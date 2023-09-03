@@ -1,5 +1,6 @@
 import { useTodosContext } from "../hooks/useTodosContext"
-
+//date fns
+import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 
 const ToDoDetails = ({ todo }) => {
     const { dispatch } = useTodosContext()
@@ -21,8 +22,8 @@ return (
     <p><strong>Priority: </strong>{todo.priority}</p>
     <p><strong>Time Commitment (min): </strong>{todo.timeCommitment}</p>
     <p><strong>Completed: </strong>{todo.completed}</p>
-    <p>{todo.createdAt}</p>
-    <span onClick={handleClick}>delete</span>
+    <p>{formatDistanceToNow(new Date(todo.createdAt),{addSuffix:true})}</p>
+    <span className='material-symbols-outlined' onClick={handleClick}>delete</span>
   </div>
 )
 }
