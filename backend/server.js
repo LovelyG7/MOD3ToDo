@@ -15,6 +15,12 @@ app.use((req, res, next) => {
   next()
 })
 
+// Set Cache-Control for all responses
+app.use((req, res, next) => {
+  res.setHeader('Cache-Control', 'no-store'); // Prevent caching for all routes
+  next();
+});
+
 //routes
 app.use('/api/to-dos', todoRoutes)
 

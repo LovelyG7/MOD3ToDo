@@ -28,6 +28,7 @@ const ToDoDetails = ({ todo }) => {
 
     const closeEditModal = () => {
         setIsModalOpen(false);
+     
     };
 
     // Function to handle submission from the modal

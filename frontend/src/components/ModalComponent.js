@@ -36,8 +36,8 @@ const ModalComponent = ({ isModalOpen, closeEditModal, todo, onSubmit }) => {
             onRequestClose={closeEditModal}
             contentLabel="Edit Todo Modal"
         >
-            <h2>Edit Todo</h2>
-            <form onSubmit={handleSubmit}>
+            <h2>Edit Todo Item</h2>
+            <form className='edit'onSubmit={handleSubmit}>
                 <label>Priority: </label>
                 <DropdownList
                     value={priority}
@@ -45,8 +45,9 @@ const ModalComponent = ({ isModalOpen, closeEditModal, todo, onSubmit }) => {
                     data={["High", "Medium", "Low"]}
                 /> 
 
-                <label>Time Commitment (min): </label>
+                <label >Time Commitment (min): </label>
                 <input
+                    className='time'
                     type="number"
                     onChange={(e) => setTimeCommitment(e.target.value)}
                     value={timeCommitment}
@@ -59,8 +60,10 @@ const ModalComponent = ({ isModalOpen, closeEditModal, todo, onSubmit }) => {
                     checked={completed === 'yes'}
                 />
 
-                <button type="submit">Update</button>
+                <button  type="submit">Update</button>
+                <br />
                 <button onClick={closeEditModal}>Cancel</button>
+                <p><i>Refresh page to see updated to-do item after hitting update</i></p>
             </form>
         </Modal>
     );
