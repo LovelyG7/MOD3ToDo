@@ -65,9 +65,15 @@ res.status(200).json(todo)
 //update a todo
 
 const updateTodo = async (req, res)=> {
-
+  const { id } = req.params
   if (!mongoose.Types.ObjectId.isValid(id)){
     return res.status(404).json({error: "No such todo"})
+  }
+  const updatedData = req.body;
+
+  // Convert createdAt back to a Date object if it's provided as a string
+  if (updatedData.createdAt && typeof updatedData.createdAt === 'string') {
+    updatedData.createdAt = new Date(updatedData.createdAt);
   }
 
   const todo = await Todo.findByIdAndUpdate({_id: id}, {
@@ -81,8 +87,6 @@ const updateTodo = async (req, res)=> {
   res.status(200).json(todo)
 
 }
-
-
 
 module.exports = {
   getTodo,
