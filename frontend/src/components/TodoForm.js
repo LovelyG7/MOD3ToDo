@@ -46,7 +46,7 @@ const TodoForm = () => {
   
   return(
     <form className="create" onSubmit={handleSubmit}> 
-      <h3>Add A New Task</h3>
+      <h3 className="start">Add A New Task</h3>
 
       <label>Task: </label>
       <input
@@ -82,8 +82,9 @@ const TodoForm = () => {
      <br/>
 
 {/* fix this to be a checkbox */}
-      <label>Completed</label>
+      <label for="completed">Completed</label>
       <input
+      class="check"
         type="checkbox"
         onChange={(e) => setCompleted(e.target.checked ? 'yes' : 'no')}
         checked={completed === 'yes'}

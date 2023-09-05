@@ -5,10 +5,16 @@ const Navbar = () => {
     <header> 
       <div className="container">
         <Link to="/">
-          <h1>
+          <h1 className='title'>
             Todo List
           </h1>
         </Link>
+        <nav>
+          <div>
+            <Link to="/login" className='options'>Login</Link>
+            <Link to="/signup"className='options'>Sign up</Link>
+          </div>
+        </nav>
       </div>
     </header>
   )

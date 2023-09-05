@@ -3,8 +3,6 @@
 
 @import url("https://fonts.googleapis.com/css?family=Galada:400");
 
-@import url("https://fonts.googleapis.com/css2?family=Style+Script&display=swap");
-
 @font-face {
   font-family: 'RetroSignature';
   src: url('assets/retro_signature/RetroSignature.otf') format('opentype');
@@ -12,9 +10,16 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Barbie';
+  src: url('assets/hello\ honey.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* layout */
 :root {
-  --primary: #2f0707;
+  --primary: #4a0808;
   --error: #e7195a;
 }
 body {
@@ -27,6 +32,11 @@ body {
     margin: 0;
     font-family: "Poppins";
     
+}
+
+.start{
+  font-family:'Poppins';
+  font-size: large;
 }
 
 /* figure out cursor */
@@ -47,16 +57,33 @@ header .container {
   margin: 0 auto;
   padding: 10px 20px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
- 
+  
 }
 header a {
   color: #660b0b;
   text-decoration: none;
-  font-family: Galada;
   font-size: xx-large;
-  padding-top: 34px;
+  padding-top: 0px;
+  display:inline;
+  justify-content: row;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.title{
+  flex: 1;
+  text-align: left;
+  font-family: 'Barbie';
+  font-size:50px;
+  color: #660b0b;
+  margin-right:900px;
+}
+.options{
+  margin-left: 20px;
+  font-family: Poppins;
+  font-size: 16px;
+  color: #660b0b;
 }
 .pages{
   max-width: 1400px;
@@ -158,11 +185,19 @@ input.error {
 }
 
 .create { 
+  align-items: center;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   background:#fbfdfc9c ;
   height: 23%;
   margin-top: 150px;
   color: var(--primary);
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
   
+}
+.check{
+  margin-right: -9px;
 }
 
 #delete {
@@ -212,7 +247,24 @@ input.error {
   width:200px
 }
 
+/* navbar */
+nav {
+  display: flex;
+  align-items: center;
+}
+nav a {
+  margin-left: 10px;
+}
+/* auth forms */
+form.signup, form.login {
+  max-width: 400px;
+  margin: 320px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 
+}
 
 
 
