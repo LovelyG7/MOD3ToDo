@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 // get all todos
 const getTodos = async (req, res) => {
   const todos = await Todo.find({}).sort({createdAt: -1})
+  
   res.status(200).json(todos)
 }
 

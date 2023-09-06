@@ -27,6 +27,7 @@ const loginUser = async (req,res) => {
 const signupUser = async (req,res) => {
 //grab email and password from req body
 const {email, password} = req.body
+
 //use try catch block when trying to sign user up
 try{
 const user = await User.signup(email, password)
@@ -36,10 +37,9 @@ const token = createToken(user._id)
 
 //pass token back to browser
 res.status(200).json({email, token})
-}catch (error) {
+} catch (error) {
 res.status(400).json({error: error.message})
 }
+}
 
-  }
-
-  module.exports = {signupUser, loginUser}
+  module.exports = { signupUser, loginUser }
