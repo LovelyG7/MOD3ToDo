@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/MOD3ToDo/static/css/main.4dc7b6a7.css",
+    "main.js": "/MOD3ToDo/static/js/main.6ba16efe.js",
+    "static/media/—Pngtree—beautiful frame background with floral_5205727.png": "/MOD3ToDo/static/media/—Pngtree—beautiful frame background with floral_5205727.11bba7f47a3011309269.png",
+    "static/media/abstract-marble-pink-white-gold-background-wedding-invitation-backdrop_779330-1200.avif": "/MOD3ToDo/static/media/abstract-marble-pink-white-gold-background-wedding-invitation-backdrop_779330-1200.8c2111f8d7595c88af78.avif",
+    "static/media/hello honey.otf": "/MOD3ToDo/static/media/hello honey.68b52dc903cae5736277.otf",
+    "static/media/lifestyle-magnolia-pack.png": "/MOD3ToDo/static/media/lifestyle-magnolia-pack.1da96719410efe2a7ee3.png",
+    "static/media/RetroSignature.otf": "/MOD3ToDo/static/media/RetroSignature.cd05795478e2494be0a9.otf",
+    "index.html": "/MOD3ToDo/index.html",
+    "main.4dc7b6a7.css.map": "/MOD3ToDo/static/css/main.4dc7b6a7.css.map",
+    "main.6ba16efe.js.map": "/MOD3ToDo/static/js/main.6ba16efe.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4dc7b6a7.css",
+    "static/js/main.6ba16efe.js"
+  ]
+}
