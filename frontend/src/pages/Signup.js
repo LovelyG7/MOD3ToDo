@@ -7,6 +7,7 @@ const Signup = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const {signup, error, isLoading} = useSignup()
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -17,7 +18,6 @@ const Signup = () => {
   return (
     <form className='signup' onSubmit={handleSubmit}>
       <h3>Sign up</h3>
-
       <label>Email:</label>
       <input 
         type="email"

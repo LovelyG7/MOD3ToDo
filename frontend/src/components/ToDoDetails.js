@@ -2,14 +2,23 @@ import { useTodosContext } from "../hooks/useTodosContext";
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import ModalComponent from "./ModalComponent";
 import { useState } from "react";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 const ToDoDetails = ({ todo }) => {
     const { dispatch } = useTodosContext();
+    const {user} = useAuthContext();
 
     // Function to handle deletion of a todo
     const handleClick = async () => {
+        if (!user) {
+            return
+          }
         const response = await fetch('/api/to-dos/' + todo._id, {
-            method: 'DELETE'
+            method: 'DELETE',
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${user.token}`
+            }
         });
         const json = await response.json();
 

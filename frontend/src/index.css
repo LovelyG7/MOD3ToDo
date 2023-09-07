@@ -230,7 +230,10 @@ input.error {
   flex-direction: column;
   align-items:center;
 }
-
+.motivation{
+  font-family:RetroSignature;
+  font-size: xx-large;
+}
 /* Wrapper for the buttons */
 .ReactModal__Content .button-wrapper {
   display: flex;
@@ -264,6 +267,7 @@ nav button {
   font-family: "Poppins";
   cursor: pointer;
   font-size: 1em;
+  margin-left: 10px;
 }
 /* auth forms */
 form.signup, form.login {

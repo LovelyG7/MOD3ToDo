@@ -2,10 +2,12 @@
 import { useState } from "react";
 import DropdownList from "react-widgets/DropdownList";
 import { useTodosContext } from "../hooks/useTodosContext"
+import { useAuthContext } from "../hooks/useAuthContext";
 
 
 const TodoForm = () => {
   const { dispatch }  = useTodosContext()
+  const { user } = useAuthContext()
 
   const [task, setTask] = useState('')
   const [priority, setPriority] = useState('High')
@@ -16,13 +18,19 @@ const TodoForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
+    if (!user) {
+      setError('You must be logged in')
+      return
+    }
+
     const todo ={task, priority, timeCommitment, completed}
     
     const response = await fetch('/api/to-dos', {
       method: 'POST',
       body: JSON.stringify(todo),
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${user.token}`
       }
     })
     const json = await response.json()

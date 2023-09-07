@@ -26,11 +26,11 @@ const loginUser = async (req,res) => {
 //signup user
 const signupUser = async (req,res) => {
 //grab email and password from req body
-const {email, password} = req.body
+const { email, password} = req.body
 
 //use try catch block when trying to sign user up
 try{
-const user = await User.signup(email, password)
+const user = await User.signup( email, password)
 
 //create a token after they've been saved to db
 const token = createToken(user._id)
